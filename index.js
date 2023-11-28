@@ -87,7 +87,6 @@ function performSetOperation(operation) {
     });
 
     promise.then(result => {
-        // document.getElementById('result').innerHTML = `<p>Result: ${result}</p>`;
         document.getElementById('result2').innerHTML = `<p>Result: ${result}</p>`;
     }).catch(error => {
         document.getElementById('result').innerHTML = `<p>Error: ${error}</p>`;
