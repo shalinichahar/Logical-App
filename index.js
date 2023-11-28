@@ -18,6 +18,7 @@ function closeModal() {
 function checkGuess() {
     const userGuess = document.getElementById('userGuess').value;
     attempts++;
+    console.log(attempts)
     if (userGuess == secretNumber) {
         alert(`Congratulations! You guessed the correct number in ${attempts} attempts.`);
         closeModal();
@@ -88,6 +89,7 @@ function performSetOperation(operation) {
     });
 
     promise.then(result => {
+        // document.getElementById('result').innerHTML = `<p>Result: ${result}</p>`;
         document.getElementById('result2').innerHTML = `<p>Result: ${result}</p>`;
     }).catch(error => {
         document.getElementById('result').innerHTML = `<p>Error: ${error}</p>`;
