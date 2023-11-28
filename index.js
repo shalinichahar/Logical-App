@@ -2,8 +2,9 @@ var secretNumber;
 var attempts = 0;
 
 function startGame() {
-secretNumber = Math.floor(Math.random() * 100) + 1; 
-openModal();
+    secretNumber = Math.floor(Math.random() * 100) + 1; 
+    console.log(secretNumber)
+    openModal();
 }
 
 function openModal() {
