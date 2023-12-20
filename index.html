@@ -8,11 +8,136 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 <body>
-    <div class="container-fluid text-center panel panel-purple">
+    <div class="container-fluid text-center panel" style="font-size: 25px; font-family:Georgia, 'Times New Roman', Times, serif;">
         Logical Apps
     </div>
 
     <div class="container text-center bg-light" id="main">
+        <div class="row">      
+            <div class="col">
+                <div class="panel panel-dark" >
+                    <h1>Promise Calculator</h1>
+                    <div class="container">
+                        
+                        <label for="num1">Enter Number 1:</label>
+                        <input type="number" class="form-control" id="num1">
+                        <br>
+                        <label for="num2">Enter Number 2:</label>
+                        <input type="number" class="form-control" id="num2">
+
+                        <button class="btn btn-primary  mt-3" onclick="performOperation('add')">Add</button>
+                        <button class="btn btn-primary mt-3" onclick="performOperation('subtract')">Subtract</button>
+                        <button class="btn btn-primary mt-3" onclick="performOperation('multiply')">Multiply</button>
+                        <button class="btn btn-primary mt-3" onclick="performOperation('divide')">Divide</button>
+                        <div id="result" class="mt-3"></div>
+                        <hr>
+                        <label for="set1">Enter Set 1 (comma-separated values):</label>
+                        <input type="text" class="form-control" id="set1">
+
+                        <label for="set2">Enter Set 2 (comma-separated values):</label>
+                        <input type="text" class="form-control" id="set2">
+
+                        <button class="btn btn-primary mt-3" onclick="performSetOperation('intersect')">Intersect</button>
+                        <button class="btn btn-primary mt-3" onclick="performSetOperation('union')">Union</button>
+                        <div id="result2" class="mt-3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="panel panel-dark" >
+                    <h1>Guess the Number <em>Game</em></h1>
+                    <button onclick="startGame()" class="btn-big">Start Game</button>
+
+                </div>
+                <div class="modal" id="myModal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Guess The Number</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal()">
+                                <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" id="userGuess">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="checkGuess()">Save changes</button> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="col">
+                <div class="panel panel-dark">
+                    <h1>Copy Text to Clipboard</h1>
+                    <div class="container">
+                        <input type="text" value="Hello World" id="myInputCopy">
+                        <button onclick="myFunctionCopy()">Copy text</button>
+                        <br>
+                        <br>
+                        <input type="text" name="" id="" placeholder="paste text here">
+                    </div>
+                </div>
+            </div>   
+        </div>      
+        <div class="row">        
+            <div class="col">   
+                <div class="panel panel-blue">
+                    <h3> Calcluate modulus of two input values</h3>
+                    <div class="container container-blue ">
+                        <label >Number 1: </label>
+                        <input type="number" class="numbers4 form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"required>
+                
+                        <label for="number4">Number 2: </label>
+                        <input type="number" class="numbers4 form-control" required>
+                
+                    
+                    <button type="submit" id="modulus-button" class="btn btn-light mx-5 p-2">Check Answer</button>
+                    <div id="output-modulus"> </div>
+                        
+                    </div>
+                </div>
+            </div>   
+            <div class="col">
+                
+                <div class="panel panel-blue">
+                    <h3> Calcluate factorial of input value</h3>
+                    <div class="container container-blue">
+                        <label for="number5"> Input Number: </label>
+                        <input type="number" id="numberF" class="form-control" required>
+                    
+                                        
+                    <button type="submit" id="factorial-button" class="btn btn-light mx-5 p-2">Check Answer</button>
+                    <div id="output-factorial" > </div>      
+                    </div>
+                </div>
+            
+            </div>
+            
+            <div class="col">
+                <div class="panel panel-blue">
+                    <h3>Union</h3>
+                    <div class="container container-blue ">
+                        <label for="inputarr1"> Enter Input-1 : </label>
+                        <input type="text" name="array1[]" id="inputarr1" class="form-control">
+                        <button type="button" id="add" class="btn btn-oval btn-sm btn-light mx-3 p-2"> Add </button>
+                        <button type="button" id="display" class="btn btn-sm btn-light mx-3 p-2" > Display </button>
+                        <p id="par"></p>
+                        <label for="inputarr2"> Enter Input-2 </label>
+                        <input type="text" name="array2[]" id="inputarr2" class="form-control">
+                        <button type="button" id="add2" class="btn btn-sm btn-light mx-3 p-2"> Add </button>
+                        <button type="button" id="display2"class="btn btn-sm btn-light mx-3 p-2"> Display</button>
+                         <p id="par2"></p>
+                    
+                    <button type="submit" id="union" class="btn btn-light mx-5 p-2">Check Answer</button>
+                    <div id="union-output"></div>
+                </div>
+            </div>
+            
+            </div>
+        </div>    
         <div class="row">
             <div class="col">
                 <div class="panel panel-dark">
@@ -67,131 +192,7 @@
             </div>
             
         </div>
-        <div class="row">
-           
-            <div class="col">
-
-                <div class="row">
-                    <div class="panel panel-blue">
-                        <h3> Calcluate modulus of two input values</h3>
-                        <div class="container container-blue ">
-                            <label >Number 1: </label>
-                            <input type="number" class="numbers4 form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"required>
-                    
-                            <label for="number4">Number 2: </label>
-                            <input type="number" class="numbers4 form-control" required>
-                    
-                        
-                        <button type="submit" id="modulus-button" class="btn btn-light mx-5 p-2">Check Answer</button>
-                        <div id="output-modulus"> </div>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    
-                    <div class="panel panel-blue">
-                        <h3> Calcluate factorial of input value</h3>
-                        <div class="container container-blue">
-                            <label for="number5"> Input Number: </label>
-                            <input type="number" id="numberF" class="form-control" required>
-                        
-                                            
-                        <button type="submit" id="factorial-button" class="btn btn-light mx-5 p-2">Check Answer</button>
-                        <div id="output-factorial" > </div>      
-                        </div>
-                    </div>
-                
-                </div>
-                
-            </div>
-            
-            <div class="col">
-                <div class="panel panel-blue" id="middle">
-                    <h3>Union</h3>
-                    <div class="container container-blue ">
-                        <label for="inputarr1"> Enter Input-1 : </label>
-                        <input type="text" name="array1[]" id="inputarr1" class="form-control">
-                        <button type="button" id="add" class="btn btn-oval btn-sm btn-light mx-3 p-2"> Add </button>
-                        <button type="button" id="display" class="btn btn-sm btn-light mx-3 p-2" > Display </button>
-                        <p id="par"></p>
-                        <label for="inputarr2"> Enter Input-2 </label>
-                        <input type="text" name="array2[]" id="inputarr2" class="form-control">
-                        <button type="button" id="add2" class="btn btn-sm btn-light mx-3 p-2"> Add </button>
-                        <button type="button" id="display2"class="btn btn-sm btn-light mx-3 p-2"> Display</button>
-                         <p id="par2"></p>
-                    
-                    <button type="submit" id="union" class="btn btn-light mx-5 p-2">Check Answer</button>
-                    <div id="union-output"></div>
-                </div>
-            </div>
-            
-        </div>
-
-        <div class="row">
-            
-            <div class="col-md-6">
-                <div class="panel panel-dark" >
-                    <h1>Promise Calculator</h1>
-                    <div class="container">
-                        
-                        <label for="num1">Enter Number 1:</label>
-                        <input type="number" class="form-control" id="num1">
-                        <br>
-                        <label for="num2">Enter Number 2:</label>
-                        <input type="number" class="form-control" id="num2">
-
-                        <button class="btn btn-primary  mt-3" onclick="performOperation('add')">Add</button>
-                        <button class="btn btn-primary mt-3" onclick="performOperation('subtract')">Subtract</button>
-                        <button class="btn btn-primary mt-3" onclick="performOperation('multiply')">Multiply</button>
-                        <button class="btn btn-primary mt-3" onclick="performOperation('divide')">Divide</button>
-                        <div id="result" class="mt-3"></div>
-                        <hr>
-                        <label for="set1">Enter Set 1 (comma-separated values):</label>
-                        <input type="text" class="form-control" id="set1">
-
-                        <label for="set2">Enter Set 2 (comma-separated values):</label>
-                        <input type="text" class="form-control" id="set2">
-
-                        <button class="btn btn-primary mt-3" onclick="performSetOperation('intersect')">Intersect</button>
-                        <button class="btn btn-primary mt-3" onclick="performSetOperation('union')">Union</button>
-                        <div id="result2" class="mt-3"></div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="col">
-                <div class="panel panel-dark" id="middle">
-                    <h1>Guess the Number <em>Game</em></h1>
-                    <button onclick="startGame()" class="btn-big">Start Game</button>
-
-                </div>
-                    <div class="modal" id="myModal" tabindex="-1" role="dialog">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Guess The Number</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal()">
-                                    <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <input type="text" id="userGuess">
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeModal()">Close</button>
-                                    <button type="button" class="btn btn-primary" onclick="checkGuess()">Save changes</button> 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
     </div>
-
-
 </body>
 <script src="index.js"></script>
 </html>

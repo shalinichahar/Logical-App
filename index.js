@@ -236,4 +236,17 @@ add2.addEventListener('click', addEl2);
 display.addEventListener('click', displayArray);
 display2.addEventListener('click', displayArray2);
 unionBtn.addEventListener('click', unionResult);
+function myFunctionCopy() {
+    var copyText = document.getElementById("myInputCopy");
+    
+     // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText.value).then(function() {
+        console.log(copyText.value)        
+      }, function(err) {
+        console.error('Async: Could not copy text: ', err);
+      });;
+  
+    // Alert the copied text
+    alert("Copied the text: " + copyText.value);
+  }
 
